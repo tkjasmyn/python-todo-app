@@ -27,3 +27,5 @@ while True:
     elif user_input == '7':
         print('\nGoodbye!')
         break
+    else:
+        print('\nUnrecognized Input')
