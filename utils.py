@@ -8,6 +8,10 @@ PRIORITY_WIDTH = 10
 DUE_WIDTH = 12
 TIME_WIDTH = 12
 
+def save_tasks(tasks):
+    with open('tasks.json', 'w') as file:
+        json.dump(tasks, file, indent=4)
+
 def get_due_date():
     while True:
         date_choice = input('Enter due date (YYYY-MM-DD): ').strip()
@@ -48,8 +52,7 @@ def add(tasks):
     tasks.append(task)
     print('Task added successfully')
 
-    with open('tasks.json', 'w') as file:
-        json.dump(tasks, file, indent=4)
+    save_tasks(tasks)
 
 def view_tasks(tasks):
     if not tasks:
@@ -85,8 +88,7 @@ def complete_task(tasks):
     for task in tasks:
         if target_id == task['id']:
             task['status'] = 'Done'
-            with open('tasks.json', 'w') as file:
-                json.dump(tasks, file, indent=4)
+            save_tasks(tasks)
             print('Task marked done')
             break
     else:
@@ -133,8 +135,7 @@ def edit_task(tasks):
                         
             now = datetime.now()
             task['time'] = now.strftime('%H:%M:%S')
-            with open('tasks.json', 'w') as file:
-                json.dump(tasks, file, indent=4)
+            save_tasks(tasks)
             print('Task edited successfully')
             break
     else:
@@ -157,8 +158,7 @@ def delete_task(tasks):
     for index, task in enumerate(tasks):
         if target_id == task['id']:
             del tasks[index]
-            with open('tasks.json', 'w') as file:
-                json.dump(tasks, file, indent=4)
+            save_tasks(tasks)
             print('\nTask deleted')
             break
     else:

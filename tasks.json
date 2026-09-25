@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "task": "Wash plate",
-        "status": "Done",
-        "priority": "Medium",
-        "time": "11:17:11",
-        "due": "2026-09-30"
-    },
-    {
         "id": 3,
         "task": "Wash cloth",
         "status": "Done",
@@ -29,5 +21,13 @@
         "priority": "None",
         "due": "2026-10-12",
         "time": "13:18:16"
+    },
+    {
+        "id": 6,
+        "task": "Buy food",
+        "status": "Done",
+        "priority": "Medium",
+        "due": "2026-09-30",
+        "time": "11:35:01"
     }
 ]
